@@ -1,0 +1,232 @@
+/* === Base resets === */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;     /* ✅ Prevent horizontal scrolling */
+  overflow-y: overlay;    /* ✅ Show scrollbars only when needed, overlay-style */
+  font-family: Arial, sans-serif;
+}
+
+/* === Background wrapper === */
+.background-wrapper {
+  min-height: 100dvh; /* Use dynamic viewport height, modern and stable */
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden; /* 💡 Force internal content to stay inside */
+}
+
+
+/* === Container === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  flex: 1; /* 🔧 Grow with page but not force height */
+}
+
+/* Centered when no results */
+.container.centered {
+  flex: 1;               /* 🔧 Avoid height calculations that cause scrollbars */
+  justify-content: center;
+}
+
+/* Top-aligned when results exist */
+.container.top {
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+/* === App box === */
+.App {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* === Search bar === */
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 640px) {
+  .search-bar {
+    flex-direction: row;
+  }
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #1d4ed8;
+}
+
+/* === Toggle buttons === */
+.view-toggle {
+  margin: 1rem 0;
+}
+
+/* === Parsed info === */
+.parsed-info {
+  font-size: 0.9rem;
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+/* === Results container === */
+.results {
+  width: 100%;
+  max-width: 1200px;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem; /* 🔧 Smaller bottom padding avoids phantom scroll */
+  box-sizing: border-box;
+}
+
+/* === Grid layout === */
+.results.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  overflow: visible;
+}
+
+/* === List layout === */
+.results.list {
+  display: block;
+  margin-top: 1rem;
+}
+
+/* === Hike card === */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  color: #333;
+}
+
+/* Card widths */
+.results.grid .card {
+  width: 250px;
+}
+
+.results.list .card {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1rem auto; /* Center + space between cards */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+/* Optional GPT output */
+.gpt-output {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 2rem;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.card a:hover {
+  background-color: #0056b3;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.type-badge.etappe {
+  background-color: #cbe7d8;
+  color: #14532d;
+}
+
+.type-badge.route {
+  background-color: #c7d2fe;
+  color: #1e3a8a;
+}
+
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.type-badge.contribution {
+  background-color: #e74c3c !important;  /* 🔥 force red background */
+  color: white !important;
+  padding: 4px 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+}

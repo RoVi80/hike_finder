@@ -1,0 +1,34 @@
+# Node and Python
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Excel temp files
+~$*.xlsx
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# Raw Swiss hiking data + pipeline intermediates (re-downloadable / regenerable,
+# see README — the app only needs the two *_with_cantons.gpkg files)
+backend/wanderland_2056.shp/
+backend/wanderland_2056.shp.zip
+backend/wanderland.zip
+backend/Etappe_final_enriched.gpkg
+backend/Route_final_enriched.gpkg
+backend/*_preview.xlsx
+
+# IDE
+.idea/
+
+# React build output
+frontend/hike-finder/build/

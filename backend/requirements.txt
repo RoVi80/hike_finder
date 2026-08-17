@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+openai
+python-dotenv
+geopandas
+shapely
+pandas
+numpy
+rapidfuzz
+unidecode
+gpxpy
+geopy
+pydantic
+httpx
+beautifulsoup4
