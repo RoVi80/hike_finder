@@ -3,6 +3,8 @@ node_modules/
 __pycache__/
 *.pyc
 *.pyo
+.venv/
+venv/
 
 # Excel temp files
 ~$*.xlsx
